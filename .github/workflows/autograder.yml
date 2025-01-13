@@ -16,17 +16,17 @@ jobs:
       uses: actions/checkout@v4
     - name: Run tests
       uses: classroom-resources/autograding-io-grader@v1
-        with:
-          test-name: Hello Test
-          id: hello-test
-          command: "java -jar ./submission.jar"
-          input:
-          expected-output: "Hello COMPSCI 458!"
-          comparison-method: exact
-          timeout: 10
+      with:
+        test-name: Hello Test
+        id: hello-test
+        command: "java -jar ./submission.jar"
+        input:
+        expected-output: "Hello COMPSCI 458!"
+        comparison-method: exact
+        timeout: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-      HELLO-TEST_RESULTS: "${{ steps.addition - test.outputs.result }}"
-          with:
-              runners: hello-test
+        HELLO-TEST_RESULTS: "${{ steps.hello-test.outputs.result }}"
+      with:
+        runners: hello-test
