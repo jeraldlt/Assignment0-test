@@ -13,11 +13,6 @@ jobs:
     if: github.actor != 'github-classroom[bot]'
 
     steps:
-    - name: Update Java
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'corretto' # See 'Supported distributions' for available options
-        java-version: '21'
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Run tests
