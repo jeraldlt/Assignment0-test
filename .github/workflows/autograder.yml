@@ -22,7 +22,7 @@ jobs:
         test-name: Hello Test
         command: "java -jar ./submission.jar"
         input:
-        expected-output: "Hello COMPSCI 458!"
+        expected-output: "Hello COMPSCI 458!\n"
         comparison-method: exact
         timeout: 10
     - name: Autograding Reporter
